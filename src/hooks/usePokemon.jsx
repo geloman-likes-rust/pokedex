@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { fetchPokemon, flatPokemon } from "../utils/pagination";
 
 const ENDPOINT = "https://pokeapi.co/api/v2/pokemon";
 
@@ -7,13 +8,8 @@ export default function (pokemon) {
 
   useEffect(() => {
     (async function () {
-      try {
-        const response = await fetch(`${ENDPOINT}/${pokemon}`);
-        const data = await response.json();
-        setPokemonData([data, null]);
-      } catch (error) {
-        setPokemonData([null, error]);
-      }
+      const [data, error] = await fetchPokemon(pokemon);
+      setPokemonData([flatPokemon(data), error]);
     })();
   }, [pokemon]);
 

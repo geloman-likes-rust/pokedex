@@ -11,7 +11,8 @@ export default function (offset) {
           `${ENDPOINT}/?limit=${LIMIT}&offset=${offset * 20}`
         );
         const data = await response.json();
-        setPokemonList([data, null]);
+        const pokemon_list = [...data.results];
+        setPokemonList([pokemon_list, null]);
       } catch (error) {
         setPokemonList(null, error);
       }
