@@ -1,0 +1,200 @@
+.pokemon-page {
+  padding-block: 20px;
+  margin-block: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  max-width: 1200px;
+  margin-top: 80px;
+  height: auto;
+}
+
+.pokemon-page .pokemon-page__pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.pokemon-page__pagination .pagination__button-prev {
+  font-size: 24px;
+  flex-basis: 100%;
+  text-align: start;
+  font-weight: bold;
+  padding: 20px 40px;
+  border: none;
+  background: #6b728e;
+  transition: all 300ms ease;
+  clip-path: polygon(0 100%, 0 0, 100% 0, 100% 50%, 40% 50%, 18% 100%);
+  cursor: pointer;
+}
+.pokemon-page__pagination .pagination__button-next {
+  font-size: 24px;
+  flex-basis: 100%;
+  border: none;
+  text-align: end;
+  font-weight: bold;
+  padding: 20px 40px;
+  background: #6b728e;
+  transition: all 300ms ease;
+  clip-path: polygon(0 50%, 0 0, 100% 0, 100% 100%, 86% 100%, 60% 50%);
+
+  cursor: pointer;
+}
+
+.pokemon-page__pagination .pagination__button-prev:hover {
+  background: #3c79f5;
+  color: white;
+}
+.pokemon-page__pagination .pagination__button-next:hover {
+  background: #3c79f5;
+  color: white;
+}
+.pokemon-page__pokemon-name {
+  font-size: 40px;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 700;
+  padding: 40px;
+}
+
+.pokemon-page__pokemon-name .pokemon-name__id {
+  opacity: 0.5;
+  margin-inline: 5px;
+  font-size: 30px;
+}
+
+.pokemon-page .pokemon-page__content {
+  display: flex;
+  padding-inline: 15px;
+}
+.pokemon-page__content .content__primary {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+.pokemon-page__content .content__secondary {
+  flex-basis: 100%;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.content__secondary .secondary__pokemon-stats {
+  background: #243763;
+  border-radius: 1rem;
+  max-width: 300px;
+  padding: 20px;
+  margin-inline: auto;
+  margin-block: 20px;
+}
+
+.secondary__pokemon-stats .pokemon-stats__stat {
+  position: relative;
+  list-style: none;
+  padding-block: 5px;
+}
+
+.pokemon-stats__stat .stat__name {
+  font-size: 18px;
+  font-weight: 500;
+}
+.pokemon-stats__stat .stat__base {
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content__primary .primary__pokemon-img {
+  height: 60%;
+  width: 60%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 500ms ease 500ms;
+}
+.content__primary .primary__pokemon-img:hover {
+  transform: scale(1.05);
+  transition: transform 500ms ease;
+}
+
+.content__primary .primary__pokemon-abilities {
+  margin-block: 20px;
+  padding: 20px;
+  width: 100%;
+}
+
+.content__primary .primary__pokemon-types {
+  padding: 20px;
+  width: 100%;
+}
+.primary__pokemon-abilities .pokemon-abilities__title {
+  margin-block: 10px 20px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #9df1df;
+}
+
+.primary__pokemon-types .pokemon-types__title {
+  display: block;
+  margin-bottom: 20px;
+  margin-inline: 5px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #f273e6;
+}
+
+.primary__pokemon-types .pokemon-types__type {
+  font-size: 14px;
+  font-weight: 700;
+  margin-inline: 5px;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+.primary__pokemon-abilities .pokemon-abilities__ability {
+  font-size: 20px;
+  padding-block: 5px;
+}
+
+.secondary__pokemon-info .pokemon-info__encounter-location {
+}
+
+.pokemon-info__encounter-location .encounter-location__title {
+  display: inline-block;
+  color: #f55050;
+  font-size: 30px;
+  font-weight: bold;
+  margin-block: 20px;
+}
+
+.pokemon-info__encounter-location .encounter-location__grid {
+  display: grid;
+}
+
+.encounter-location__grid .grid__item {
+  line-height: 150%;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+@media (max-width: 700px) {
+  .pokemon-page .pokemon-page__content {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .pokemon-page .pokemon-page__pagination {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+  }
+  .pokemon-page__pagination .pagination__button-next {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 58%, 20% 58%, 50% 0);
+    background: #3c79f5;
+  }
+  .pokemon-page__pagination .pagination__button-prev {
+    clip-path: polygon(40% 0, 75% 58%, 100% 58%, 100% 100%, 0 100%, 0 0);
+    background: #3c79f5;
+  }
+}
