@@ -2,9 +2,15 @@ export function flatPokemon(data) {
   return {
     id: {
       primary: data.id,
-      secondary: String(data.id / 1000)
-        .split(".")
-        .join(""),
+      secondary: String(
+        data.id >= 1000
+          ? `${data.id}`
+          : data.id >= 100
+          ? `0${data.id}`
+          : data.id >= 10
+          ? `00${data.id}`
+          : `000${data.id}`
+      ),
     },
     name: data.name,
     types: data.types.map((poke) => poke.type.name),
