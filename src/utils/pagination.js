@@ -10,9 +10,7 @@ export function flatPokemon(data) {
           : data.id >= 10
           ? `00${data.id}`
           : `000${data.id}`
-      )
-        .split(".")
-        .join(""),
+      ),
     },
     name: data.name,
     types: data.types.map((poke) => poke.type.name),
