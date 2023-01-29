@@ -3,15 +3,22 @@ const Home = lazy(() => import("./pages/home/index"));
 const Pokedex = lazy(() => import("./pages/pokedex/index"));
 const Pokemon = lazy(() => import("./pages/pokemon/index"));
 const PageNotFound = lazy(() => import("./pages/page-not-found"));
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  ScrollRestoration,
+} from "react-router-dom";
 import Header from "./components/ui/header/index";
 import Loading from "./components/ui/loading";
 import "./App.css";
+import ScrollToTop from "../ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Header />
         <div className="App__main">
           <Routes>
