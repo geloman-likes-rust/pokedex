@@ -28,3 +28,15 @@ body {
   user-select: none;
   overflow-x: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a084dc;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
