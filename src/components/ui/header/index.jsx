@@ -35,7 +35,7 @@ export default function () {
     if (!inputRef.current.value) return;
     try {
       const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${inputRef.current.value}`
+        `https://pokeapi.co/api/v2/pokemon/${inputRef.current.value.toLocaleLowerCase()}`
       );
       const data = await response.json();
       setPokemonId([data.id, null]);
