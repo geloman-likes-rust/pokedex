@@ -1,6 +1,6 @@
 .card {
   display: inline-block;
-  padding: 20px 20px;
+  padding: clamp(10px, 3vw, 20px) clamp(10px, 3vw, 20px);
   border-radius: 5px;
   background: #eeeeee;
   display: none;
@@ -42,29 +42,28 @@
 }
 
 .card__info .info__pokemon-id {
-  font-size: clamp(12px, 4vw, 20px);
+  font-size: clamp(10px, 3vw, 20px);
   color: #3c6255;
   font-weight: bold;
 }
 
 .card__info .info__pokemon-name {
-  font-size: clamp(20px, 5vw, 30px);
+  font-size: clamp(16px, 4vw, 30px);
   color: #567189;
   font-weight: 800;
   text-transform: capitalize;
 }
 
 .card__info .info__pokemon-types {
-  font-size: 16px;
+  font-size: clamp(8px, 2vw + 3px, 16px);
 }
 
 .pokemon-types__pokemon-type {
   display: inline-block;
-  width: 100px;
+  width: clamp(50px, 8vw + 3px, 100px);
   text-align: center;
-  margin-right: 5px;
-  padding-inline: 5px;
-  border: 1px solid white;
+  margin-right: clamp(2px, 2vw, 5px);
+  padding-inline: clamp(2px, 2vw, 5px);
   border-radius: 5px;
 }
 

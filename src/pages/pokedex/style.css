@@ -40,3 +40,11 @@
     margin-top: 120px;
   }
 }
+
+@media (max-width: 600px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 20px;
+    gap: 10px;
+  }
+}

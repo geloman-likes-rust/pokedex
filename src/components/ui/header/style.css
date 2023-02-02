@@ -5,10 +5,11 @@
   justify-content: center;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   gap: 20px;
   align-items: center;
   padding-block: 20px;
-  width: 100vw;
   transition: transform 300ms ease;
 }
 
